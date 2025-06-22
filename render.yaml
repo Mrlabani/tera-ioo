@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: terabox-api
+    runtime: python
+    repo: https://github.com/Mrlabani/tera-ioo
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app
+    envVars:
+      - key: PORT
+        value: 10000
